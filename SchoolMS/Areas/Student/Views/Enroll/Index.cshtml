@@ -1,0 +1,229 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] Enrollment Form - SchoolMS</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/SchoolMS.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            background-color: dimgrey;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .form-label {
+            text-align: left; /* Align labels to the left */
+        }
+
+        hr {
+            border: 1px solid darkgreen;
+            width: 100%;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center">
+        <main role="main" class="pb-3">
+            <div class="text-center" style="background-color: darkgreen; padding: 20px;">
+                <div class="container">
+                    <div class="form-container" style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+                        <div class="row align-items-center mb-4">
+                            <div class="col-4 col-md-3 text-start">
+                                <img src="~/img/logo.png" class="img-fluid" alt="School Logo" width="150px" />
+                            </div>
+                            <div class="col-4 col-md-6 text-center">
+                                <h3 class="mb-0">Eulogio M. Garcia Integrated School</h3>
+                                <h5 class="mb-0">Enrollment Form</h5>
+                            </div>
+                            <div class="col-4 col-md-3 text-end">
+                                <img src="~/img/deped-logo.png" class="img-fluid" alt="Deped Logo" width="150px" />
+                            </div>
+                        </div>
+
+                        <hr>
+
+                        <form class="row g-3 needs-validation" novalidate>
+                            <h5 class="text-start">Personal Information</h5>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputFirstName" placeholder="First name" required>
+                                        <label for="inputFirstName">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputLastName" placeholder="Last name" required>
+                                        <label for="inputLastName">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="inputEmail" placeholder="Email Address" required>
+                                        <label for="inputEmail">Email Address</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <select id="inputGender" class="form-select" required>
+                                            <option selected disabled value="">Select Gender</option>
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                        <label for="inputGender">Gender</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="date" class="form-control" id="inputBday" required>
+                                        <label for="inputBday">Birth Date</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="inputPhone" placeholder="(123) 456-7890" aria-label="Phone Number" required>
+                                        <label for="inputPhone">Phone Number</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="inputAddress" placeholder="Home Address" required>
+                                    <label for="inputAddress">Home Address</label>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h5 class="text-start">Educational Background</h5>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputPrevSchool" placeholder="Previous School Attended" required>
+                                        <label for="inputPrevSchool">Previous School Attended</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputLastGrade" placeholder="Last Grade Completed" required>
+                                        <label for="inputLastGrade">Last Grade Completed</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputYearCompleted" placeholder="Year of Completion" required>
+                                        <label for="inputYearCompleted">Year of Completion</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h5 class="text-start">Parent/Guardian Information</h5>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputParentFirstName" placeholder="First name" required>
+                                        <label for="inputParentFirstName">First Name</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputParentLastName" placeholder="Last name" required>
+                                        <label for="inputParentLastName">Last Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="inputParentRelationship" placeholder="Relationship" required>
+                                        <label for="inputParentRelationship">Relationship</label>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="inputParentEmail" placeholder="Email Address" required>
+                                        <label for="inputParentEmail">Email Address</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="tel" class="form-control" id="inputParentPhone" placeholder="(123) 456-7890" aria-label="Phone Number" required>
+                                        <label for="inputParentPhone">Phone Number</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <h5 class="text-start">Required Papers</h5>
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <h6 class="text-start">Birth Certificate</h6>
+                                    <input class="form-control" type="file" id="formFile" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="text-start">Report Card</h6>
+                                    <input class="form-control" type="file" id="formFile" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <h6 class="text-start">Certificate of Good Moral</h6>
+                                    <input class="form-control" type="file" id="formFile" required>
+                                </div>
+                            </div>
+
+                            <hr>
+
+                            <div class="col-12 text-center">
+                                <button type="submit" class="btn btn-primary" style="width: 200px;">Submit</button>
+                                <button type="button" class="btn btn-danger" style="width: 200px;">
+                                    <a class="nav-link" asp-area="Student" asp-controller="Home" asp-action="Index">Back</a>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script>
+        (function () {
+            'use strict';
+            window.addEventListener('load', function () {
+                var forms = document.getElementsByClassName('needs-validation');
+                var validation = Array.prototype.filter.call(forms, function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
+</body>
+</html>

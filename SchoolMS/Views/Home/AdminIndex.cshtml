@@ -1,0 +1,90 @@
+﻿@{
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">No. of Sections</div>
+                    <div class="card-body">
+                        <h4 class="card-title">15</h4>
+                        <p class="card-text">Total number of sections currently active.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">No. of Professors</div>
+                    <div class="card-body">
+                        <h4 class="card-title">25</h4>
+                        <p class="card-text">Total number of professors in the system.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card border-secondary mb-3" style="max-width: 20rem;">
+                    <div class="card-header">No. of Students</div>
+                    <div class="card-body">
+                        <h4 class="card-title">500</h4>
+                        <p class="card-text">Total number of students currently enrolled.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <div class="container border border-secondary rounded" style="max-width: 700px; padding: 20px;">
+                <!-- Set max-width for container -->
+                <canvas id="myChart" class="mx-auto" style="width:100%;"></canvas> <!-- Added mx-auto for centering -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Include Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script>
+    // Data for the line chart
+    var xValues = ["2020", "2021", "2022", "2023", "2024", "2025"];
+    var yValuesSections = [10, 12, 15, 14, 18, 20];
+    var yValuesProfessors = [5, 10, 15, 20, 22, 25];
+    var yValuesStudents = [100, 200, 300, 400, 450, 500];
+
+    // Create line chart
+    new Chart("myChart", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                label: 'Sections',
+                data: yValuesSections,
+                borderColor: "#b91d47",
+                fill: false
+            }, {
+                label: 'Professors',
+                data: yValuesProfessors,
+                borderColor: "#00aba9",
+                fill: false
+            }, {
+                label: 'Students',
+                data: yValuesStudents,
+                borderColor: "#2b5797",
+                fill: false
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Growth of Sections, Professors, and Students"
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            }
+        }
+    });
+</script>
